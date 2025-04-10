@@ -15,44 +15,44 @@ const app = express();
 routes(app);
 
 
-const livros = [
-    {
-        id: 1,
-        titulo: "Senhor dos Aneis",
-    },
-    {
-        id: 2, 
-        titulo: "As cronicas de Narnia"
-    }
-]
+// const livros = [
+//     {
+//         id: 1,
+//         titulo: "Senhor dos Aneis",
+//     },
+//     {
+//         id: 2, 
+//         titulo: "As cronicas de Narnia"
+//     }
+// ]
 
-//apagar
-function buscaLivro(id) {
-    return livros.findIndex(livro => {
-        return livro.id === Number.parseInt(id)
-    })
-}
+// //apagar
+// function buscaLivro(id) {
+//     return livros.findIndex(livro => {
+//         return livro.id === Number.parseInt(id)
+//     })
+// }
 
-app.get("/livros/:id", (req, res) => {
-    const index = buscaLivro(req.params.id);
-    res.status(200).json(livros[index]);
-})
+// app.get("/livros/:id", (req, res) => {
+//     const index = buscaLivro(req.params.id);
+//     res.status(200).json(livros[index]);
+// })
 
-app.put("/livros/:id", (req, res) => {
-    const index = buscaLivro(req.params.id);
-    livros[index].titulo = req.body.titulo;
-    res.status(200).json(livros);
-})
+// app.put("/livros/:id", (req, res) => {
+//     const index = buscaLivro(req.params.id);
+//     livros[index].titulo = req.body.titulo;
+//     res.status(200).json(livros);
+// })
 
-app.delete("/livros/:id", (req, res) => {
-    const index = buscaLivro(req.params.id);
-    livros.splice(index, 1);
-    res.status(200).send("Livro removido com sucesso");
-})
+// app.delete("/livros/:id", (req, res) => {
+//     const index = buscaLivro(req.params.id);
+//     livros.splice(index, 1);
+//     res.status(200).send("Livro removido com sucesso");
+// })
 
-app.post("/livros", (req, res) => {
-    livros.push(req.body);
+// app.post("/livros", (req, res) => {
+//     livros.push(req.body);
     
-})
+// })
 
 export default app;
