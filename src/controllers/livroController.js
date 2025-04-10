@@ -73,7 +73,7 @@ class LivroController {
         else
           res.status(404).json({ message: `Nenhum livro encontrado para a editora ${id}` });
       } catch (error) {
-        
+        res.status(500).json({ message: `${erro.message} - falha na exclusão` });
       }
 
 
