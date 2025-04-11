@@ -68,12 +68,12 @@ class LivroController {
       const editora = req.query.editora;
       try {
         const livrosEncontrados = await livro.find({editora: editora});
-        if(livrosEncontrados.length > 0)
+        if(livrosEncontrados && livrosEncontrados.length > 0)    
           res.status(200).json(livrosEncontrados);
         else
           res.status(404).json({ message: `Nenhum livro encontrado para a editora ${id}` });
       } catch (error) {
-        res.status(500).json({ message: `${erro.message} - falha na exclusão` });
+          res.status(500).json({ message: `${error.message} - falha na busca` });
       }
 
 
