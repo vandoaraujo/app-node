@@ -4,10 +4,12 @@ const { https } = pkg;
 
 const TOKEN = process.env.ORACLE_TOKEN;
 
+
 class LoginController {
 
   static async logar(req, res) {
     console.log("Entrou no login controller");
+    console.log("Token carregado do .env:", TOKEN);
 
     const options = {
       'method': 'POST',
