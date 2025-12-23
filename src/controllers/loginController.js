@@ -10,6 +10,7 @@ class LoginController {
   static async logar(req, res) {
     console.log("Entrou no login controller");
     console.log("Token carregado do .env:", TOKEN);
+    console.log(TOKEN);
 
     const options = {
       'method': 'POST',
